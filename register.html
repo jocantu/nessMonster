@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css"/>
+    <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+    <title>New Location Registration</title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <label for="nickname">Nickname: </label>
+      <input type="text" name="nickname" value="">
+      <label for="gender">Gender: </label>
+      <select name="gender" id="gender" style="width: 120px;" onchange="sgo_checkg(); sgo_checkother('gender');">
+        <option value="0" selected="">Unspecified</option>
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+        <option value="3">Bigender</option>
+        <option value="4">Agender</option>
+        <option value="5">Androgyne</option>
+        <option value="6">Genderqueer</option>
+        <option value="7">Third</option>
+        <option value="8">Fourth</option>
+        <option value="9">Fluid</option>
+        <option value="14">Questioning</option>
+        <option value="15">Other</option>
+      </select>
+      Country: <select class="gds-cr gds-countryflag" country-data-region-id="gds-cr-four" data-language="en"></select>
+      Region: <select id="gds-cr-four"></select>
+      <label for="location">Chose your location.</label>
+      <div id="location-map"></div>
+      <script src="data/countries.js"></script>
+      <script src="js/location-map.js"></script>
+    </form>
+  </body>
+</html>
